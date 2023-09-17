@@ -1,0 +1,8 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: cache
+    command: ["redis-server", "--requirepass", "cache_password"]
+    ports:
+      - "6379:6379"
