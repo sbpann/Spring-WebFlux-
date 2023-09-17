@@ -18,11 +18,9 @@ public class ExchangeRateSourceFactory {
   @Autowired
   public ExchangeRateSourceFactory(List<ExchangeCurrencySource> sourceList) {
     this.sourceList = sourceList;
-    logger.info("Exchange rate sources: {}", sourceList);
   }
 
   public ExchangeCurrencySource getSource(String sourceName) {
-
     Optional<ExchangeCurrencySource> exchangeCurrencySource =
         sourceList.stream().filter(source -> source.getName().equals(sourceName)).findFirst();
     if (exchangeCurrencySource.isEmpty()) {

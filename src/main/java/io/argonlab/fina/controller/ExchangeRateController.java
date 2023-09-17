@@ -4,6 +4,7 @@ import io.argonlab.fina.controller.dto.ExchangeRateResponse;
 import io.argonlab.fina.exception.NotFoundException;
 import io.argonlab.fina.services.ExchangeRateService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import reactor.core.publisher.Mono;
 class ExchangeRateController {
   private final ExchangeRateService exchangeRateService;
 
+  @Autowired
   public ExchangeRateController(ExchangeRateService exchangeRateService) {
     this.exchangeRateService = exchangeRateService;
   }

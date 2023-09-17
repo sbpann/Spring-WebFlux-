@@ -1,7 +1,5 @@
 package io.argonlab.fina.controller;
 
-import io.argonlab.fina.TestValueOperation;
-import io.argonlab.fina.controller.dto.ExchangeRateResponse;
 import io.argonlab.fina.exception.GlobalExceptionHandler;
 import io.argonlab.fina.exception.NotFoundException;
 import io.argonlab.fina.services.ExchangeRateService;
@@ -12,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;

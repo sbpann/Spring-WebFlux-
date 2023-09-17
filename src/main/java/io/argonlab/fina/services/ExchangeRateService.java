@@ -4,6 +4,8 @@ import io.argonlab.fina.exception.NotFoundException;
 import io.argonlab.fina.source.ExchangeRateSourceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -11,6 +13,7 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Stream;
 
+@Service
 public class ExchangeRateService {
 
   private final ExchangeRateSourceFactory exchangeRateSourceFactory;
@@ -19,8 +22,10 @@ public class ExchangeRateService {
   private static final List<String> ADDITIONAL_CURRENCY_LIST = new ArrayList<>();
   private static final Logger logger = LoggerFactory.getLogger(ExchangeRateService.class);
 
+  @Autowired
   public ExchangeRateService(ExchangeRateSourceFactory exchangeRateSourceFactory) {
     this.exchangeRateSourceFactory = exchangeRateSourceFactory;
+    logger.info("Factory {}", exchangeRateSourceFactory);
   }
 
   public static List<String> getAvailableCurrencies() {
